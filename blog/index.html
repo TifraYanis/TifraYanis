@@ -17,7 +17,38 @@
     <script type="text/javascript" src="https://tifrayanis.github.io/TifraYanis/js/script.js"></script>
     <script type="text/javascript" src="https://tifrayanis.github.io/TifraYanis/js/jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../js/burger.js"></script>
+    <script>
+        function burger(){
+        let button = document.getElementById("burger-button")
+        let menu = document.getElementById("navbarTogglerDemo02")
+
+        let is_open = false
+
+        button.addEventListener('click', () => {
+            if(is_open){
+                menu.style.display = "none"
+                is_open = false
+            }
+            else{
+                menu.style.display = "block"
+                is_open = true
+            }
+
+        })
+
+        window.addEventListener('resize', () => {
+            menu.style.display = "none"
+            is_open = false
+        })
+    }
+
+    function main(){
+        burger()
+    }
+
+
+    window.onload = main
+    </script>
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
